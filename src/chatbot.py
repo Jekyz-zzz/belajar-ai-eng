@@ -17,12 +17,14 @@ def tanya_ai(pertanyaan):
     return response.choices[0].message.content
 
 
+print("Halo! Nice To meet you")
+
 while True:
-    print("Halo! Nice To meet you")
     print("========================")
     print("Please Select an option below!")
     print("1. Tanya AI")
     print("2. Exit")
+    print("3. Tambahkan Personalisasi")
     user_input = int(input("Masukkan Pilihan Anda: "))
 
     if user_input == 1:
@@ -32,6 +34,9 @@ while True:
         print(f"\nAI: {jawaban}")
     elif user_input == 2:
         break
+    elif user_input == 3:
+        personalisasi = input("Masukkan personalisasi yang anda inginkan: ")
+        list_message.append({"role": "system", "content": personalisasi})
     else :
         print("Invalid Option!")
     
